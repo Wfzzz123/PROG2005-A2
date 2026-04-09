@@ -1,0 +1,84 @@
+:host {
+	--ink: #1f2937;
+	--muted: #4b5563;
+	--line: #d1d5db;
+	--brand: #0f766e;
+	--brand-strong: #115e59;
+	--bg-soft: #f4f7f6;
+	--card: #ffffff;
+	display: block;
+	min-height: 100vh;
+}
+
+.app-shell {
+	min-height: 100vh;
+	background:
+		radial-gradient(circle at 0% 0%, rgba(15, 118, 110, 0.15), transparent 38%),
+		radial-gradient(circle at 100% 0%, rgba(194, 65, 12, 0.14), transparent 35%),
+		linear-gradient(180deg, #f8fbfa 0%, #eef3f2 100%);
+}
+
+.topbar {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1.25rem;
+	border-bottom: 1px solid var(--line);
+	background: rgba(255, 255, 255, 0.92);
+	backdrop-filter: blur(6px);
+}
+
+.brand {
+	color: var(--brand-strong);
+	font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+	font-size: 1.25rem;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+}
+
+.main-nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.main-nav a {
+	color: var(--ink);
+	text-decoration: none;
+	border: 1px solid transparent;
+	padding: 0.45rem 0.75rem;
+	border-radius: 999px;
+	transition: 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+	border-color: #9ca3af;
+	background: #f3f4f6;
+}
+
+.content-shell {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 1.25rem;
+}
+
+@media (max-width: 700px) {
+	.topbar {
+		position: static;
+	}
+
+	.main-nav {
+		width: 100%;
+	}
+
+	.main-nav a {
+		flex: 1 1 calc(50% - 0.5rem);
+		text-align: center;
+	}
+}
